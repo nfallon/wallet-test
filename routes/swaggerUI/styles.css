@@ -1,0 +1,104 @@
+/*VARIABLES
+ *	$lightblue: #e5ebf0
+ *	$blue: #284A6D
+ *	$lightgreen: #dfece8
+ *	$green: #519B87
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+/*NAV*/
+
+.swagger-ui .topbar {
+  background: #900;
+  height: 60px;
+  background-image: url("https://uploads-ssl.webflow.com/54b43b848905a5f42386d8a9/550afd68836b5b2f6c2cd39e_RocketLawyer%C2%AE_logo_white.svg");
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 250px;
+}
+
+.swagger-ui .topbar-wrapper {
+  display: none !important;
+}
+
+/*TYPE */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.opblock-summary-description,
+.opblock-title,
+button,
+label {
+  font-family: "Open Sans", sans-serif !important;
+}
+
+p {
+  font-size: 16px !important;
+}
+
+button {
+  font-size: 18px;
+}
+
+.swagger-ui .opblock-tag {
+  font-size: 24px;
+  margin: 0 0 12px;
+  color: #3b4151;
+
+  padding: 10px 20px 10px 0;
+
+  border-bottom: 1px solid rgba(59, 65, 81, 0.3);
+}
+
+.opblock-title {
+  font-size: 18px;
+}
+
+.opblock-description-wrapper {
+}
+
+.swagger-ui .opblock .opblock-summary-description {
+  font-size: 15px;
+}
+
+.swagger-ui .opblock .opblock-summary-operation-id,
+.swagger-ui .opblock .opblock-summary-path,
+.swagger-ui .opblock .opblock-summary-path__deprecated {
+  font-size: 18px;
+}
+
+/*REQUESTS*/
+
+/*get*/
+.swagger-ui .opblock.opblock-get .opblock-summary-method {
+  background: #284a6d;
+}
+.swagger-ui .opblock.opblock-get .opblock-summary {
+  border-color: #284a6d;
+}
+
+.swagger-ui .opblock.opblock-get {
+  border-color: #284a6d;
+  /*background: #EEF1F4;*/
+  background: #e5ebf0;
+}
+
+/*post*/
+.swagger-ui .opblock.opblock-post .opblock-summary-method {
+  background: #519b87;
+}
+
+.swagger-ui .opblock.opblock-post .opblock-summary {
+  border-color: #519b87;
+}
+
+.swagger-ui .opblock.opblock-post {
+  border-color: #284a6d;
+  background: #dfece8;
+}

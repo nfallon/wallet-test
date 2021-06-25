@@ -1,0 +1,128 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "This is an interactive portal for the Wallet API and conforms to the OpenAPI 3 standard. Read the documenation at https://github.com/rocketlawyer/wallet-du",
+    "title": "Wallet API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/ping": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "rl_peer_payments_auth": ["write:requests", "read:requests"]
+          }
+        ],
+        "tags": ["Test"],
+        "description": "Ping test, returns 200 OK",
+        "operationId": "ping/ping",
+        "summary": "Return a HTTP 200 OK to check the application is available."
+      }
+    },
+    "/liveness": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "rl_peer_payments_auth": ["write:requests", "read:requests"]
+          }
+        ],
+        "tags": ["Test"],
+        "description": "Liveness test, returns 200 OK",
+        "operationId": "ping/liveness",
+        "summary": "Return a HTTP 200 OK to check the application is live."
+      }
+    },
+    "/readiness": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "rl_peer_payments_auth": ["write:requests", "read:requests"]
+          }
+        ],
+        "tags": ["Test"],
+        "description": "Readiness test, returns 200 OK",
+        "operationId": "ping/readiness",
+        "summary": "Return a HTTP 200 OK to check the application is ready."
+      }
+    },
+    "/wallet": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "rl_peer_payments_auth": ["write:requests", "read:requests"]
+          }
+        ],
+        "tags": ["Wallet"],
+        "description": "Create a standard ECDSA Ethereum or BSC compliant wallet address. Returns a key pair (20-byte PK, 32-byte SK).",
+        "operationId": "wallet/create",
+        "summary": "Create a standard  ECDSA Ethereum or BSC compliant wallet address."
+      }
+    }
+  },
+  "tags": [
+    {
+      "description": "Wallet",
+      "name": "Wallet"
+    },
+    {
+      "description": "tests ",
+      "name": "Test"
+    }
+  ],
+  "servers": [
+    {
+      "url": "/wallet-du/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "rl_peer_payments_auth": {
+        "type": "oauth2",
+        "flows": {
+          "implicit": {
+            "authorizationUrl": "http://swagger.io/api/oauth/dialog",
+            "scopes": {
+              "read:requests": "read your deals",
+              "write:requests": "modify deals in your account"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+
+    }
+  }
+}
